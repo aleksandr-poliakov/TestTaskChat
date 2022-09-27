@@ -7,23 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F07A60028E3592F00BCFFD2 /* CalendarDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07A5FF28E3592F00BCFFD2 /* CalendarDecorator.swift */; };
+		1F0ACCE328E2EC8700E2506A /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE228E2EC8700E2506A /* ChatTableViewCell.swift */; };
+		1F0ACCE528E2F78F00E2506A /* ChatViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE428E2F78F00E2506A /* ChatViewHeader.swift */; };
+		1F0ACCE828E2FB9F00E2506A /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = 1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */; };
+		1F0ACCEA28E30D4F00E2506A /* MessageInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE928E30D4F00E2506A /* MessageInputBar.swift */; };
+		1F0ACCEE28E3103700E2506A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCED28E3103700E2506A /* Chat.swift */; };
+		1F0ACCF228E3171F00E2506A /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCF028E3171F00E2506A /* Chat.xcdatamodeld */; };
+		1F0ACCF428E3180A00E2506A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCF328E3180A00E2506A /* Message.swift */; };
+		1F0ACCFC28E31A0D00E2506A /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCFB28E31A0D00E2506A /* ChatStore.swift */; };
+		1F0ACD0028E31E7A00E2506A /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCFF28E31E7A00E2506A /* LocalChat.swift */; };
+		1F0ACD0228E3226800E2506A /* LocalChatStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACD0128E3226800E2506A /* LocalChatStorage.swift */; };
 		1F39692528E209F800F727A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39692428E209F800F727A9 /* AppDelegate.swift */; };
 		1F39692728E209F800F727A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39692628E209F800F727A9 /* SceneDelegate.swift */; };
-		1F39692928E209F800F727A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39692828E209F800F727A9 /* ViewController.swift */; };
-		1F39692C28E209F800F727A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F39692A28E209F800F727A9 /* Main.storyboard */; };
+		1F39692928E209F800F727A9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39692828E209F800F727A9 /* ChatViewController.swift */; };
 		1F39692E28E209FA00F727A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F39692D28E209FA00F727A9 /* Assets.xcassets */; };
 		1F39693128E209FA00F727A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F39692F28E209FA00F727A9 /* LaunchScreen.storyboard */; };
+		1F39693A28E20A5600F727A9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39693928E20A5600F727A9 /* Coordinator.swift */; };
+		1F39693E28E20AB400F727A9 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39693D28E20AB400F727A9 /* ChatViewModel.swift */; };
+		1F39694228E20ACF00F727A9 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39694128E20ACF00F727A9 /* ApplicationCoordinator.swift */; };
+		1F76E06228E3345900AF1916 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76E06128E3345900AF1916 /* LocalMessage.swift */; };
+		1FFE556128E368C9002FA034 /* ChatComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE556028E368C9002FA034 /* ChatComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F07A5FF28E3592F00BCFFD2 /* CalendarDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDecorator.swift; sourceTree = "<group>"; };
+		1F0ACCE228E2EC8700E2506A /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		1F0ACCE428E2F78F00E2506A /* ChatViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewHeader.swift; sourceTree = "<group>"; };
+		1F0ACCE928E30D4F00E2506A /* MessageInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputBar.swift; sourceTree = "<group>"; };
+		1F0ACCED28E3103700E2506A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		1F0ACCF128E3171F00E2506A /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
+		1F0ACCF328E3180A00E2506A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		1F0ACCFB28E31A0D00E2506A /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		1F0ACCFF28E31E7A00E2506A /* LocalChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalChat.swift; sourceTree = "<group>"; };
+		1F0ACD0128E3226800E2506A /* LocalChatStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalChatStorage.swift; sourceTree = "<group>"; };
 		1F39692128E209F800F727A9 /* MuzzApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzzApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F39692428E209F800F727A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F39692628E209F800F727A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F39692828E209F800F727A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1F39692B28E209F800F727A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F39692828E209F800F727A9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1F39692D28E209FA00F727A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F39693028E209FA00F727A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F39693228E209FA00F727A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F39693928E20A5600F727A9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1F39693D28E20AB400F727A9 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		1F39694128E20ACF00F727A9 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		1F76E06128E3345900AF1916 /* LocalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessage.swift; sourceTree = "<group>"; };
+		1FFE556028E368C9002FA034 /* ChatComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +60,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0ACCE828E2FB9F00E2506A /* InputBarAccessoryView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F07A60128E35BC400BCFFD2 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				1F07A5FF28E3592F00BCFFD2 /* CalendarDecorator.swift */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
+		1F0ACCDC28E2E55D00E2506A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1F0ACCF028E3171F00E2506A /* Chat.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1F0ACCE128E2EC7800E2506A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1F0ACCE228E2EC8700E2506A /* ChatTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1F0ACCEC28E3102E00E2506A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F0ACCED28E3103700E2506A /* Chat.swift */,
+				1F0ACCF328E3180A00E2506A /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F0ACCEF28E3168300E2506A /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1F0ACD0128E3226800E2506A /* LocalChatStorage.swift */,
+				1F0ACCFB28E31A0D00E2506A /* ChatStore.swift */,
+				1F0ACCFF28E31E7A00E2506A /* LocalChat.swift */,
+				1F76E06128E3345900AF1916 /* LocalMessage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
 		1F39691828E209F800F727A9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +130,57 @@
 		1F39692328E209F800F727A9 /* MuzzApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1F39694128E20ACF00F727A9 /* ApplicationCoordinator.swift */,
 				1F39692428E209F800F727A9 /* AppDelegate.swift */,
 				1F39692628E209F800F727A9 /* SceneDelegate.swift */,
-				1F39692828E209F800F727A9 /* ViewController.swift */,
-				1F39692A28E209F800F727A9 /* Main.storyboard */,
+				1FFE555F28E368B9002FA034 /* Composer */,
+				1F07A60128E35BC400BCFFD2 /* Decorators */,
+				1F0ACCEF28E3168300E2506A /* LocalStorage */,
+				1F0ACCDC28E2E55D00E2506A /* CoreData */,
+				1F39693828E20A4700F727A9 /* Coordinator */,
+				1F0ACCEC28E3102E00E2506A /* Model */,
+				1F39693B28E20A9E00F727A9 /* Core */,
 				1F39692D28E209FA00F727A9 /* Assets.xcassets */,
 				1F39692F28E209FA00F727A9 /* LaunchScreen.storyboard */,
 				1F39693228E209FA00F727A9 /* Info.plist */,
 			);
 			path = MuzzApplication;
+			sourceTree = "<group>";
+		};
+		1F39693828E20A4700F727A9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1F39693928E20A5600F727A9 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1F39693B28E20A9E00F727A9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1F39693C28E20AA800F727A9 /* Chat */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1F39693C28E20AA800F727A9 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1F0ACCE128E2EC7800E2506A /* Cell */,
+				1F39692828E209F800F727A9 /* ChatViewController.swift */,
+				1F39693D28E20AB400F727A9 /* ChatViewModel.swift */,
+				1F0ACCE428E2F78F00E2506A /* ChatViewHeader.swift */,
+				1F0ACCE928E30D4F00E2506A /* MessageInputBar.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1FFE555F28E368B9002FA034 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				1FFE556028E368C9002FA034 /* ChatComposer.swift */,
+			);
+			path = Composer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +199,9 @@
 			dependencies = (
 			);
 			name = MuzzApplication;
+			packageProductDependencies = (
+				1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */,
+			);
 			productName = MuzzApplication;
 			productReference = 1F39692128E209F800F727A9 /* MuzzApplication.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +230,9 @@
 				Base,
 			);
 			mainGroup = 1F39691828E209F800F727A9;
+			packageReferences = (
+				1F0ACCE628E2FB9F00E2506A /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
+			);
 			productRefGroup = 1F39692228E209F800F727A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +249,6 @@
 			files = (
 				1F39693128E209FA00F727A9 /* LaunchScreen.storyboard in Resources */,
 				1F39692E28E209FA00F727A9 /* Assets.xcassets in Resources */,
-				1F39692C28E209F800F727A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +259,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F39692928E209F800F727A9 /* ViewController.swift in Sources */,
+				1F0ACCF228E3171F00E2506A /* Chat.xcdatamodeld in Sources */,
+				1F39693A28E20A5600F727A9 /* Coordinator.swift in Sources */,
+				1F39692928E209F800F727A9 /* ChatViewController.swift in Sources */,
 				1F39692528E209F800F727A9 /* AppDelegate.swift in Sources */,
+				1F0ACCEE28E3103700E2506A /* Chat.swift in Sources */,
+				1F0ACCFC28E31A0D00E2506A /* ChatStore.swift in Sources */,
+				1F0ACCE528E2F78F00E2506A /* ChatViewHeader.swift in Sources */,
+				1FFE556128E368C9002FA034 /* ChatComposer.swift in Sources */,
+				1F07A60028E3592F00BCFFD2 /* CalendarDecorator.swift in Sources */,
+				1F0ACD0028E31E7A00E2506A /* LocalChat.swift in Sources */,
+				1F0ACD0228E3226800E2506A /* LocalChatStorage.swift in Sources */,
+				1F39693E28E20AB400F727A9 /* ChatViewModel.swift in Sources */,
+				1F0ACCE328E2EC8700E2506A /* ChatTableViewCell.swift in Sources */,
 				1F39692728E209F800F727A9 /* SceneDelegate.swift in Sources */,
+				1F0ACCF428E3180A00E2506A /* Message.swift in Sources */,
+				1F76E06228E3345900AF1916 /* LocalMessage.swift in Sources */,
+				1F0ACCEA28E30D4F00E2506A /* MessageInputBar.swift in Sources */,
+				1F39694228E20ACF00F727A9 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1F39692A28E209F800F727A9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F39692B28E209F800F727A9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1F39692F28E209FA00F727A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,14 +415,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S357Q5BVQT;
+				DEVELOPMENT_TEAM = DWP5TWW82H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MuzzApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,14 +442,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S357Q5BVQT;
+				DEVELOPMENT_TEAM = DWP5TWW82H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MuzzApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +484,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F0ACCE628E2FB9F00E2506A /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nathantannar4/InputBarAccessoryView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F0ACCE628E2FB9F00E2506A /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
+			productName = InputBarAccessoryView;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		1F0ACCF028E3171F00E2506A /* Chat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F0ACCF128E3171F00E2506A /* Chat.xcdatamodel */,
+			);
+			currentVersion = 1F0ACCF128E3171F00E2506A /* Chat.xcdatamodel */;
+			path = Chat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1F39691928E209F800F727A9 /* Project object */;
 }
