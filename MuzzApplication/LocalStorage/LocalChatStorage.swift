@@ -50,7 +50,7 @@ final class LocalChatStorage: ChatStore {
         request.sortDescriptors = [sort]
 
         do {
-            return (local: try container.viewContext.fetch(request).map { $0.consumeLocalData() }, chat: try container.viewContext.fetch(request))
+            return (local: try container.viewContext.fetch(request).map { $0.consumeLocalData() }.sorted { $0.date.compare($1.date) == .orderedDescending }, chat: try container.viewContext.fetch(request).sorted { $0.date.compare($1.date) == .orderedDescending })
         } catch {
             print("Error getting data. \(error.localizedDescription)")
         }
