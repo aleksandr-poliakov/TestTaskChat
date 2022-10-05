@@ -139,7 +139,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         inputBar.sendButton.startAnimating()
         inputBar.inputTextView.text = ""
-        view.endEditing(true)
         viewModel.sendMessage(text: text)
     }
 }
