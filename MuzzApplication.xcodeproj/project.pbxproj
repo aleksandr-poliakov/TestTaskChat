@@ -10,7 +10,6 @@
 		1F07A60028E3592F00BCFFD2 /* CalendarDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07A5FF28E3592F00BCFFD2 /* CalendarDecorator.swift */; };
 		1F0ACCE328E2EC8700E2506A /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE228E2EC8700E2506A /* ChatTableViewCell.swift */; };
 		1F0ACCE528E2F78F00E2506A /* ChatViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE428E2F78F00E2506A /* ChatViewHeader.swift */; };
-		1F0ACCE828E2FB9F00E2506A /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = 1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */; };
 		1F0ACCEA28E30D4F00E2506A /* MessageInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCE928E30D4F00E2506A /* MessageInputBar.swift */; };
 		1F0ACCEE28E3103700E2506A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCED28E3103700E2506A /* Chat.swift */; };
 		1F0ACCF228E3171F00E2506A /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0ACCF028E3171F00E2506A /* Chat.xcdatamodeld */; };
@@ -26,6 +25,7 @@
 		1F39693A28E20A5600F727A9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39693928E20A5600F727A9 /* Coordinator.swift */; };
 		1F39693E28E20AB400F727A9 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39693D28E20AB400F727A9 /* ChatViewModel.swift */; };
 		1F39694228E20ACF00F727A9 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39694128E20ACF00F727A9 /* ApplicationCoordinator.swift */; };
+		1F61595A28ED932B003E8A2E /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = 1F61595928ED932B003E8A2E /* InputBarAccessoryView */; };
 		1F76E06228E3345900AF1916 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76E06128E3345900AF1916 /* LocalMessage.swift */; };
 		1FFE556128E368C9002FA034 /* ChatComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE556028E368C9002FA034 /* ChatComposer.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0ACCE828E2FB9F00E2506A /* InputBarAccessoryView in Frameworks */,
+				1F61595A28ED932B003E8A2E /* InputBarAccessoryView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +116,7 @@
 			children = (
 				1F39692328E209F800F727A9 /* MuzzApplication */,
 				1F39692228E209F800F727A9 /* Products */,
+				1F61595828ED932B003E8A2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +176,13 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		1F61595828ED932B003E8A2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1FFE555F28E368B9002FA034 /* Composer */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +208,7 @@
 			);
 			name = MuzzApplication;
 			packageProductDependencies = (
-				1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */,
+				1F61595928ED932B003E8A2E /* InputBarAccessoryView */,
 			);
 			productName = MuzzApplication;
 			productReference = 1F39692128E209F800F727A9 /* MuzzApplication.app */;
@@ -497,7 +505,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1F0ACCE728E2FB9F00E2506A /* InputBarAccessoryView */ = {
+		1F61595928ED932B003E8A2E /* InputBarAccessoryView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1F0ACCE628E2FB9F00E2506A /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
 			productName = InputBarAccessoryView;

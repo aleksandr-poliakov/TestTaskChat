@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocalMessage: Equatable {
+struct LocalMessage: Equatable, Hashable {
     let title: String
     let date: Date
     let upcoming: Bool

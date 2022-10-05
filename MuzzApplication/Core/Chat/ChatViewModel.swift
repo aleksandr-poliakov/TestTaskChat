@@ -7,40 +7,39 @@
 
 import Foundation
 
+protocol ChatViewModelType {
+    typealias Observer<T> = (T) -> Void
+    
+    var transform: Observer<[LocalChat]>? { get set }
+    var countItems: Int { get set }
+    func allSection(_ section: Int) -> LocalChat
+    func sendMessage(text: String)
+    func viewWillAppear()
+}
 
-final class ChatViewModel {
+
+final class ChatViewModel: ChatViewModelType {
     
     typealias Observer<T> = (T) -> Void
     private var upcoming: Bool = true
     private var data: ChatStore.Data
     private let store: ChatStore
+    var countItems: Int = 0
     
-    var messageAppended: Observer<IndexPath>?
-    var dataRetrieved: Observer<()>?
+    var transform: Observer<[LocalChat]>?
     
     init(store: ChatStore) {
         self.store = store
         data = store.retrieve()
     }
     
-    func fetchData() {
-        dataRetrieved?(())
+    func viewWillAppear() {
+        transform?(data.local)
+        countItems = data.local.count
     }
     
-    var numberOrSection: Int {
-        data.local.count
-    }
-    
-    func numberOfRows(section: Int) -> Int {
-        data.local[section].messages.count
-    }
-    
-    func chat(section: Int) -> LocalChat {
-        data.local[section]
-    }
-    
-    func message(indexPath: IndexPath) -> LocalMessage {
-        data.local[indexPath.section].messages[indexPath.row]
+    func allSection(_ section: Int) -> LocalChat {
+        return data.local[section]
     }
     
     func sendMessage(text: String) {
@@ -49,7 +48,7 @@ final class ChatViewModel {
         let message = LocalMessage(title: text, date: Date(), upcoming: upcoming)
         if data.local.isEmpty {
             data = store.retrieve()
-            dataRetrieved?(())
+            transform?(data.local)
         } else {
             appendMessage(message: message)
         }
@@ -57,7 +56,6 @@ final class ChatViewModel {
     
     private func appendMessage(message: LocalMessage) {
         data.local[0].messages.insert(message, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        messageAppended?(indexPath)
+        transform?(data.local)
     }
 }

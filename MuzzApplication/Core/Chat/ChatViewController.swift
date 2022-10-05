@@ -15,7 +15,7 @@ final class ChatViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dataSource = self
+       // tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
         tableView.delegate = self
@@ -24,9 +24,11 @@ final class ChatViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var dataSource = makeDataSource()
+    
     private let keyboardManager: KeyboardManager = KeyboardManager()
     private let inputBar: InputBarAccessoryView = MessageInputBar()
-    private let viewModel: ChatViewModel
+    private var viewModel: ChatViewModelType
     
     override var inputAccessoryView: UIView? {
         return inputBar
@@ -36,7 +38,7 @@ final class ChatViewController: UIViewController {
         return true
     }
     
-    init(viewModel: ChatViewModel) {
+    init(viewModel: ChatViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -49,13 +51,11 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bind()
-        fetchData()
     }
     
-    // MARK: - Fetch core data items
-    
-    private func fetchData() {
-        viewModel.fetchData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
     
     // MARK: - Configure Layour
@@ -81,50 +81,42 @@ final class ChatViewController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 self?.tableView.contentInset.top = (notification.endFrame.height)
                 self?.tableView.setContentOffset(CGPoint(x: .zero, y: (notification.endFrame.height)), animated: true)
-                if self?.viewModel.numberOrSection ?? 0 > 0 { self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true) }
+                if self?.viewModel.countItems ?? 0 > 0 { self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true) }
                 self?.view.layoutIfNeeded()
             }
         }
         
-        viewModel.dataRetrieved = { [weak self] _ in
-            self?.tableView.reloadData()
-            self?.inputBar.sendButton.stopAnimating()
-        }
-        
-        viewModel.messageAppended = { [weak self] index in
-            self?.performAnimation(indexPath: index)
-        }
-    }
-    
-    // MARK: - Perform Animation
-    
-    private func performAnimation(indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            self.tableView.beginUpdates()
-            self.tableView.insertRows(at: [indexPath], with: .fade)
-            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-            self.tableView.endUpdates()
-            self.inputBar.sendButton.stopAnimating()
+        viewModel.transform = { [weak self] chat in
+            self?.update(with: chat.first?.messages ?? [], date: chat.first?.date ?? Date(), animate: true)
         }
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - DiffableDataSource approach
 
-extension ChatViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.numberOrSection
+fileprivate extension ChatViewController {
+    func makeDataSource() -> UITableViewDiffableDataSource<Date, LocalMessage> {
+        return UITableViewDiffableDataSource(
+            tableView: tableView,
+            cellProvider: {  tableView, indexPath, local in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as? ChatTableViewCell else {
+                    assertionFailure("Failed to dequeue \(ChatTableViewCell.self)!")
+                    return UITableViewCell()
+                }
+                cell.configureCell(model: local)
+                return cell
+            }
+        )
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRows(section: section)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as? ChatTableViewCell else { return UITableViewCell() }
-        
-        cell.configureCell(model: viewModel.message(indexPath: indexPath))
-        return cell
+
+    func update(with messages: [LocalMessage], date: Date, animate: Bool = true) {
+        DispatchQueue.main.async {
+            var snapshot = NSDiffableDataSourceSnapshot<Date, LocalMessage>()
+            snapshot.appendSections([date])
+            snapshot.appendItems(messages, toSection: date)
+            self.dataSource.apply(snapshot, animatingDifferences: animate)
+            self.inputBar.sendButton.stopAnimating()
+        }
     }
 }
 
@@ -133,7 +125,7 @@ extension ChatViewController: UITableViewDataSource {
 extension ChatViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let header = ChatViewHeader()
-        header.configureView(viewModel.chat(section: section))
+        header.configureView(viewModel.allSection(section))
         return header
     }
 }
@@ -143,6 +135,8 @@ extension ChatViewController: UITableViewDelegate {
 extension ChatViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         inputBar.sendButton.startAnimating()
+        inputBar.inputTextView.text = ""
+        view.endEditing(true)
         viewModel.sendMessage(text: text)
     }
 }
