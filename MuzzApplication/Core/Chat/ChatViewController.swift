@@ -86,7 +86,7 @@ final class ChatViewController: UIViewController {
         }
         
         viewModel.transform = { [weak self] chat in
-            self?.update(with: chat.first?.messages ?? [], date: chat.first?.date ?? Date(), animate: true)
+            self?.update(with: chat, animate: true)
         }
     }
 }
@@ -108,11 +108,15 @@ fileprivate extension ChatViewController {
         )
     }
 
-    func update(with messages: [LocalMessage], date: Date, animate: Bool = true) {
+    func update(with messages: [LocalChat], animate: Bool = true) {
         DispatchQueue.main.async {
             var snapshot = NSDiffableDataSourceSnapshot<Date, LocalMessage>()
-            snapshot.appendSections([date])
-            snapshot.appendItems(messages, toSection: date)
+            
+            messages.forEach {
+                snapshot.appendSections([$0.date])
+                snapshot.appendItems($0.messages, toSection: $0.date)
+            }
+
             self.dataSource.apply(snapshot, animatingDifferences: animate)
             self.inputBar.sendButton.stopAnimating()
         }
